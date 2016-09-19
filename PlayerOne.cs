@@ -6,23 +6,24 @@ using System.Threading.Tasks;
 
 namespace DiceGame
 {
-    public class Player
+    public class PlayerOne : Player
     {
-        public string PlayerName;
-        public int PlayerScore;
-
+        public int PlayerOneScore = 0;
         int correct = 0;
         int rock = 1;
         int paper = 2;
         int scissors = 3;
         int lizard = 4;
         int spock = 5;
-
-        //public Player(string PlayerName, int PlayerScore)
-        //{
-        //    this.PlayerName = PlayerName;
-        //}
-        public void Selection()
+        public PlayerOne(string PlayerOneName, int PlayerOneScore)
+            //: base(PlayerOneName, PlayerScore)
+        {
+            Console.WriteLine("What is your name?");
+            string PlayerName = Console.ReadLine();
+            PlayerName = PlayerOneName;
+            PlayerScore = PlayerOneScore;
+        }
+        public void PlayerOneSelection()
         {
             int Choice = 0;
             do
@@ -43,6 +44,7 @@ namespace DiceGame
                 }
             } while (Choice < 6);
             while (correct == 0) ;
+
         }
     }
 }

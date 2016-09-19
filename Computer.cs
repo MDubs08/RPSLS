@@ -4,22 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPSLS
+namespace DiceGame
 {
     public class Computer : Player
     {
-        public int GetComputerPick;
-        public string choice;
-        public Computer()
+        int ComputerScore = 0;
+        string ComputerName = "Computer";
+
+        public Computer(string ComputerName, int ComputerScore)
         {
-            name = "Computer";
+            PlayerScore = ComputerScore;
         }
         public int ComputerPick()
         {
-        Random computerPick = new Random();
-        int GetComputerPick = computerPick.Next(1, 6);
-        return (GetComputerPick);
+            Random computerPick = new Random();
+            int GetComputerPick = computerPick.Next(1, 6);
+            return (GetComputerPick);
         }
     }
-}
 
+}
